@@ -1,0 +1,682 @@
+/*==================================================
+                STATS SECTION
+==================================================*/
+
+.stats-section{
+
+    position:relative;
+
+    padding:140px 0;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                BACKGROUND
+==================================================*/
+
+.stats-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:-250px;
+
+    top:80px;
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+.stats-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    right:-220px;
+
+    bottom:-220px;
+
+    border-radius:50%;
+
+    background:#00E6A8;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
+.stats-container{
+
+    width:min(92%,1320px);
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==================================================
+                GRID
+==================================================*/
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:80px;
+
+}
+
+/*==================================================
+                CARD
+==================================================*/
+
+.stat-card{
+
+    position:relative;
+
+    padding:45px 30px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}
+
+/* Premium Border */
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(50,212,255,.30),
+
+        rgba(0,230,168,.18),
+
+        rgba(255,255,255,.05)
+
+    );
+
+    -webkit-mask:
+
+        linear-gradient(#fff 0 0) content-box,
+
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+/*==================================================
+                NUMBER CIRCLE
+==================================================*/
+
+.stat-number{
+
+    width:140px;
+
+    height:140px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.30);
+
+}
+
+.stat-number h2{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.stat-card h3{
+
+    font-family:"Sora",sans-serif;
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+}
+
+.stat-card p{
+
+    color:#b9c7d8;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+
+/*==================================================
+                CARD HOVER
+==================================================*/
+
+.stat-card:hover{
+
+    transform:translateY(-14px);
+
+    border-color:rgba(50,212,255,.20);
+
+    box-shadow:
+
+        0 40px 90px rgba(0,0,0,.35),
+
+        0 0 60px rgba(50,212,255,.08);
+
+}
+
+/*==================================================
+            GLOWING NUMBER CIRCLE
+==================================================*/
+
+.stat-number{
+
+    position:relative;
+
+    overflow:visible;
+
+}
+
+.stat-number::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(50,212,255,.20);
+
+    animation:rotateRing 18s linear infinite;
+
+}
+
+.stat-number::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(50,212,255,.18),
+
+        transparent 70%
+
+    );
+
+    z-index:-1;
+
+    filter:blur(20px);
+
+}
+
+/*==================================================
+            ICON FLOAT
+==================================================*/
+
+@keyframes floatStat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.stat-number{
+
+    animation:floatStat 6s ease-in-out infinite;
+
+}
+
+.stat-card:nth-child(2) .stat-number{
+
+    animation-delay:.4s;
+
+}
+
+.stat-card:nth-child(3) .stat-number{
+
+    animation-delay:.8s;
+
+}
+
+.stat-card:nth-child(4) .stat-number{
+
+    animation-delay:1.2s;
+
+}
+
+/*==================================================
+            CONTENT HOVER
+==================================================*/
+
+.stat-card h3{
+
+    transition:.35s;
+
+}
+
+.stat-card:hover h3{
+
+    color:#32D4FF;
+
+}
+
+.stat-card p{
+
+    transition:.35s;
+
+}
+
+.stat-card:hover p{
+
+    color:#dce8f4;
+
+}
+
+/*==================================================
+            CARD SHINE
+==================================================*/
+
+.stat-card{
+
+    isolation:isolate;
+
+}
+
+.stat-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-60%;
+
+    width:60%;
+
+    height:300%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    z-index:1;
+
+}
+
+.stat-card:hover::after{
+
+    left:130%;
+
+}
+
+/*==================================================
+            RING ROTATION
+==================================================*/
+
+@keyframes rotateRing{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+
+
+
+/*==================================================
+                LARGE TABLET
+==================================================*/
+
+@media (max-width:1200px){
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.stat-card{
+
+    padding:40px 28px;
+
+}
+
+.stat-number{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+.stat-number h2{
+
+    font-size:38px;
+
+}
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:991px){
+
+.stats-section{
+
+    padding:100px 0;
+
+}
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+.stat-card{
+
+    padding:35px 25px;
+
+}
+
+.stat-card h3{
+
+    font-size:22px;
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.stats-section{
+
+    padding:80px 0;
+
+}
+
+.stats-container{
+
+    width:92%;
+
+}
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+}
+
+.stat-card{
+
+    padding:32px 24px;
+
+}
+
+.stat-number{
+
+    width:105px;
+
+    height:105px;
+
+    margin-bottom:24px;
+
+}
+
+.stat-number::after{
+
+    width:140px;
+
+    height:140px;
+
+}
+
+.stat-number h2{
+
+    font-size:34px;
+
+}
+
+.stat-card h3{
+
+    font-size:20px;
+
+}
+
+.stat-card p{
+
+    font-size:14px;
+
+}
+
+}
+
+/*==================================================
+                EXTRA SMALL
+==================================================*/
+
+@media (max-width:480px){
+
+.stat-card{
+
+    padding:28px 20px;
+
+}
+
+.stat-number{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+.stat-number::before{
+
+    inset:-8px;
+
+}
+
+.stat-number::after{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+.stat-number h2{
+
+    font-size:28px;
+
+}
+
+.stat-card h3{
+
+    font-size:18px;
+
+}
+
+.stat-card p{
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+}
+
+/*==================================================
+                PERFORMANCE
+==================================================*/
+
+.stat-card,
+.stat-number{
+
+    will-change:transform;
+
+}
