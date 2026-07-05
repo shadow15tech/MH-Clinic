@@ -8,7 +8,7 @@
 
     right:30px;
 
-    bottom:210px;
+    bottom:240px;
 
     width:64px;
 
@@ -32,11 +32,11 @@
 
     align-items:center;
 
-    z-index:9999;
+    z-index:9997;
 
-    opacity:0;
+    opacity:1;
 
-    visibility:hidden;
+    visibility:visible;
 
     transform:translateY(20px);
 
@@ -110,7 +110,7 @@
 
     fill:none;
 
-    stroke:url(#gradient);
+    stroke:url(#32D4FF);
 
     stroke:#32D4FF;
 
@@ -140,7 +140,7 @@
 
     right:16px;
 
-    bottom:160px;
+    bottom:190px;
 
 }
 

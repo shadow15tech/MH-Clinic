@@ -1,0 +1,274 @@
+/*==================================================
+                GALLERY LIGHTBOX
+==================================================*/
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(3,10,18,.94);
+
+    backdrop-filter:blur(18px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+    z-index:999999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox-image{
+
+    width:auto;
+
+    max-width:88%;
+
+    max-height:85vh;
+
+    border-radius:24px;
+
+    object-fit:contain;
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.45);
+
+    transform:scale(.92);
+
+    transition:.45s;
+
+}
+
+.lightbox.active .lightbox-image{
+
+    transform:scale(1);
+
+}
+
+
+
+/*==================================================
+                CLOSE BUTTON
+==================================================*/
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:35px;
+
+    right:35px;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s cubic-bezier(.23,1,.32,1);
+
+}
+
+.lightbox-close:hover{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    color:#041321;
+
+    transform:rotate(90deg) scale(1.08);
+
+}
+
+/*==================================================
+            PREVIOUS / NEXT
+==================================================*/
+
+.lightbox-prev,
+
+.lightbox-next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s cubic-bezier(.23,1,.32,1);
+
+}
+
+.lightbox-prev{
+
+    left:40px;
+
+}
+
+.lightbox-next{
+
+    right:40px;
+
+}
+
+.lightbox-prev:hover,
+
+.lightbox-next:hover{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    color:#041321;
+
+    transform:
+
+        translateY(-50%)
+
+        scale(1.08);
+
+    box-shadow:
+
+        0 20px 50px rgba(50,212,255,.28);
+
+}
+
+/*==================================================
+                IMAGE HOVER
+==================================================*/
+
+.lightbox-image:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.lightbox-image{
+
+    max-width:92%;
+
+    max-height:70vh;
+
+    border-radius:18px;
+
+}
+
+.lightbox-prev,
+
+.lightbox-next{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:18px;
+
+}
+
+.lightbox-prev{
+
+    left:15px;
+
+}
+
+.lightbox-next{
+
+    right:15px;
+
+}
+
+.lightbox-close{
+
+    width:50px;
+
+    height:50px;
+
+    top:20px;
+
+    right:20px;
+
+    font-size:20px;
+
+}
+
+}

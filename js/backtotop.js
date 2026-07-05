@@ -1,5 +1,5 @@
 /*=========================================
-        BACK TO TOP
+        PREMIUM BACK TO TOP
 =========================================*/
 
 const backTop = document.querySelector(".back-top");
@@ -13,18 +13,26 @@ if (backTop && progressCircle) {
     progressCircle.style.strokeDasharray = circumference;
     progressCircle.style.strokeDashoffset = circumference;
 
-    window.addEventListener("scroll", () => {
+    function updateBackToTop() {
 
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollTop =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop;
 
-        const progress = scrollTop / docHeight;
+        const docHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
 
-        const offset = circumference - (progress * circumference);
+        const progress =
+            docHeight > 0 ? scrollTop / docHeight : 0;
+
+        const offset =
+            circumference - (progress * circumference);
 
         progressCircle.style.strokeDashoffset = offset;
 
-        if (scrollTop > 350) {
+        if (scrollTop > 300) {
 
             backTop.classList.add("show");
 
@@ -34,9 +42,21 @@ if (backTop && progressCircle) {
 
         }
 
-    });
+    }
 
-    backTop.addEventListener("click", () => {
+    // Normal Scroll
+    window.addEventListener("scroll", updateBackToTop);
+
+    // Resize
+    window.addEventListener("resize", updateBackToTop);
+
+    // Initial Run
+    updateBackToTop();
+
+    // Smooth Scroll
+    backTop.addEventListener("click", function (e) {
+
+        e.preventDefault();
 
         window.scrollTo({
 

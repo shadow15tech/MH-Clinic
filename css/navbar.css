@@ -1187,3 +1187,29 @@ SCROLL EFFECT
     background-size:180px 180px;
 
 }
+
+
+
+/*=========================================
+        ACTIVE MENU
+=========================================*/
+
+.navbar-nav a.active{
+
+    color:#32D4FF;
+
+}
+
+.navbar-nav a.active::after{
+
+    width:100%;
+
+}
+
+.navbar-nav a.active::before{
+
+    opacity:1;
+
+    transform:translateX(-50%) scale(1);
+
+}
