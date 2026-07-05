@@ -1,0 +1,668 @@
+/*==================================================
+                PROCESS SECTION
+==================================================*/
+
+.process-section{
+
+    position:relative;
+
+    padding:140px 0;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                BACKGROUND
+==================================================*/
+
+.process-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:-260px;
+
+    top:100px;
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+.process-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    right:-220px;
+
+    bottom:-220px;
+
+    border-radius:50%;
+
+    background:#00E6A8;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
+.process-container{
+
+    width:min(92%,1320px);
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==================================================
+                TIMELINE
+==================================================*/
+
+.process-timeline{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:28px;
+
+    margin-top:90px;
+
+}
+
+/*==================================================
+                CONNECTOR LINE
+==================================================*/
+
+.process-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:42px;
+
+    left:10%;
+
+    width:80%;
+
+    height:3px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    border-radius:20px;
+
+    opacity:.35;
+
+}
+
+/*==================================================
+                STEP
+==================================================*/
+
+.process-step{
+
+    position:relative;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+/*==================================================
+                CIRCLE
+==================================================*/
+
+.step-circle{
+
+    width:86px;
+
+    height:86px;
+
+    margin:auto;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:"Sora",sans-serif;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.25);
+
+    transition:.45s;
+
+}
+
+/*==================================================
+                ACTIVE
+==================================================*/
+
+.process-step.active .step-circle{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    color:#041321;
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+        0 25px 60px rgba(50,212,255,.30);
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.step-content{
+
+    padding:0 10px;
+
+}
+
+.step-content h3{
+
+    font-family:"Sora",sans-serif;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    margin-bottom:14px;
+
+}
+
+.step-content p{
+
+    color:#b9c7d8;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+                STEP HOVER
+==================================================*/
+
+.process-step{
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}
+
+.process-step:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.process-step:hover .step-circle{
+
+    transform:scale(1.12);
+
+    border-color:rgba(50,212,255,.45);
+
+    box-shadow:
+
+        0 30px 80px rgba(50,212,255,.25),
+
+        0 0 40px rgba(50,212,255,.15);
+
+}
+
+/*==================================================
+            FLOATING ANIMATION
+==================================================*/
+
+@keyframes floatCircle{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.step-circle{
+
+    animation:floatCircle 5s ease-in-out infinite;
+
+}
+
+.process-step:nth-child(2) .step-circle{
+
+    animation-delay:.3s;
+
+}
+
+.process-step:nth-child(3) .step-circle{
+
+    animation-delay:.6s;
+
+}
+
+.process-step:nth-child(4) .step-circle{
+
+    animation-delay:.9s;
+
+}
+
+.process-step:nth-child(5) .step-circle{
+
+    animation-delay:1.2s;
+
+}
+
+/*==================================================
+            TOP GLOW
+==================================================*/
+
+.step-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(50,212,255,.18),
+
+        transparent 70%
+
+    );
+
+    z-index:-1;
+
+}
+
+/*==================================================
+            CONTENT HOVER
+==================================================*/
+
+.process-step:hover h3{
+
+    color:#32D4FF;
+
+}
+
+.step-content h3{
+
+    transition:.35s;
+
+}
+
+.process-step:hover p{
+
+    color:#dbe8f5;
+
+}
+
+.step-content p{
+
+    transition:.35s;
+
+}
+
+/*==================================================
+            CARD EFFECT
+==================================================*/
+
+.step-content{
+
+    padding:26px 20px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    backdrop-filter:blur(16px);
+
+    transition:.4s;
+
+}
+
+.process-step:hover .step-content{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:rgba(50,212,255,.18);
+
+}
+
+
+
+
+/*==================================================
+            LARGE TABLET
+==================================================*/
+
+@media (max-width:1200px){
+
+.process-container{
+
+    width:94%;
+
+}
+
+.process-timeline{
+
+    gap:20px;
+
+}
+
+.step-circle{
+
+    width:76px;
+
+    height:76px;
+
+    font-size:22px;
+
+}
+
+.step-content h3{
+
+    font-size:20px;
+
+}
+
+.step-content p{
+
+    font-size:14px;
+
+}
+
+}
+
+/*==================================================
+            TABLET
+==================================================*/
+
+@media (max-width:991px){
+
+.process-section{
+
+    padding:100px 0;
+
+}
+
+.process-timeline{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+    margin-top:60px;
+
+}
+
+.process-timeline::before{
+
+    width:3px;
+
+    height:calc(100% - 90px);
+
+    left:38px;
+
+    top:45px;
+
+}
+
+.process-step{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    text-align:left;
+
+    gap:28px;
+
+}
+
+.step-circle{
+
+    margin:0;
+
+    flex-shrink:0;
+
+}
+
+.step-content{
+
+    width:100%;
+
+}
+
+}
+
+/*==================================================
+            MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.process-section{
+
+    padding:80px 0;
+
+}
+
+.process-container{
+
+    width:92%;
+
+}
+
+.process-timeline{
+
+    margin-top:50px;
+
+    gap:35px;
+
+}
+
+.process-timeline::before{
+
+    left:30px;
+
+}
+
+.step-circle{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:18px;
+
+}
+
+.step-content{
+
+    padding:20px;
+
+    border-radius:20px;
+
+}
+
+.step-content h3{
+
+    font-size:18px;
+
+}
+
+.step-content p{
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media (max-width:480px){
+
+.process-step{
+
+    gap:18px;
+
+}
+
+.step-circle{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:16px;
+
+}
+
+.process-timeline::before{
+
+    left:26px;
+
+}
+
+.step-content{
+
+    padding:18px;
+
+}
+
+.step-content h3{
+
+    font-size:17px;
+
+}
+
+.step-content p{
+
+    font-size:13px;
+
+}
+
+}
+
+/*==================================================
+            ACTIVE STEP
+==================================================*/
+
+.process-step.active .step-content{
+
+    border:1px solid rgba(50,212,255,.25);
+
+    background:rgba(50,212,255,.06);
+
+}
+
+/*==================================================
+            SMOOTH TRANSITIONS
+==================================================*/
+
+.process-step,
+.step-circle,
+.step-content{
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}

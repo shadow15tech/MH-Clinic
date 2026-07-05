@@ -1,0 +1,641 @@
+/*==================================================
+                TESTIMONIAL SECTION
+==================================================*/
+
+.testimonial-section{
+
+    position:relative;
+
+    padding:140px 0;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                BACKGROUND
+==================================================*/
+
+.testimonial-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    left:-250px;
+
+    top:120px;
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    filter:blur(220px);
+
+    opacity:.05;
+
+}
+
+.testimonial-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    right:-200px;
+
+    bottom:-180px;
+
+    border-radius:50%;
+
+    background:#00E6A8;
+
+    filter:blur(220px);
+
+    opacity:.05;
+
+}
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
+.testimonial-container{
+
+    width:min(92%,1320px);
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==================================================
+                GRID
+==================================================*/
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:80px;
+
+}
+
+/*==================================================
+                CARD
+==================================================*/
+
+.testimonial-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}
+
+/* Premium Border */
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:32px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(50,212,255,.28),
+
+        rgba(0,230,168,.18),
+
+        rgba(255,255,255,.05)
+
+    );
+
+    -webkit-mask:
+
+        linear-gradient(#fff 0 0) content-box,
+
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.testimonial-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+    height:320px;
+
+}
+
+.testimonial-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+.testimonial-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*==================================================
+                IMAGE OVERLAY
+==================================================*/
+
+.testimonial-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,.05)
+
+    );
+
+    z-index:1;
+
+}
+
+
+/*==================================================
+                PLAY BUTTON
+==================================================*/
+
+.play-button{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    z-index:5;
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}
+
+.testimonial-card:hover .play-button{
+
+    transform:translate(-50%,-50%) scale(1.12);
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    color:#041321;
+
+    box-shadow:
+
+        0 20px 50px rgba(50,212,255,.35);
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.testimonial-content{
+
+    padding:32px;
+
+}
+
+.rating{
+
+    font-size:20px;
+
+    color:#FFD54A;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+.testimonial-content p{
+
+    color:#d8e4f1;
+
+    line-height:1.9;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+    min-height:115px;
+
+}
+
+.testimonial-content h4{
+
+    font-family:"Sora",sans-serif;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+.testimonial-content span{
+
+    color:#32D4FF;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/*==================================================
+            GOOGLE REVIEW BADGE
+==================================================*/
+
+.testimonial-card::after{
+
+    content:"Google Review";
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    z-index:10;
+
+}
+
+/*==================================================
+                CARD HOVER
+==================================================*/
+
+.testimonial-card:hover{
+
+    transform:translateY(-14px);
+
+    box-shadow:
+
+        0 40px 100px rgba(0,0,0,.35),
+
+        0 0 60px rgba(50,212,255,.08);
+
+}
+
+.testimonial-card:hover .testimonial-content h4{
+
+    color:#32D4FF;
+
+}
+
+.testimonial-content h4{
+
+    transition:.35s;
+
+}
+
+/*==================================================
+                GLOW
+==================================================*/
+
+.testimonial-card:hover{
+
+    border-color:rgba(50,212,255,.18);
+
+}
+
+
+
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:1200px){
+
+.testimonial-grid{
+
+    gap:25px;
+
+}
+
+.testimonial-image{
+
+    height:280px;
+
+}
+
+.testimonial-content{
+
+    padding:26px;
+
+}
+
+.testimonial-content h4{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:991px){
+
+.testimonial-section{
+
+    padding:100px 0;
+
+}
+
+.testimonial-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.testimonial-section{
+
+    padding:80px 0;
+
+}
+
+.testimonial-container{
+
+    width:92%;
+
+}
+
+.testimonial-grid{
+
+    grid-template-columns:1fr;
+
+    gap:28px;
+
+}
+
+.testimonial-image{
+
+    height:260px;
+
+}
+
+.play-button{
+
+    width:64px;
+
+    height:64px;
+
+    font-size:20px;
+
+}
+
+.testimonial-content{
+
+    padding:22px;
+
+}
+
+.testimonial-content p{
+
+    min-height:auto;
+
+    margin-bottom:22px;
+
+}
+
+.testimonial-content h4{
+
+    font-size:20px;
+
+}
+
+.rating{
+
+    font-size:18px;
+
+}
+
+.testimonial-card::after{
+
+    font-size:11px;
+
+    padding:7px 12px;
+
+}
+
+}
+
+/*==================================================
+                EXTRA SMALL
+==================================================*/
+
+@media (max-width:480px){
+
+.testimonial-image{
+
+    height:220px;
+
+}
+
+.play-button{
+
+    width:58px;
+
+    height:58px;
+
+    font-size:18px;
+
+}
+
+.testimonial-content{
+
+    padding:18px;
+
+}
+
+.testimonial-content p{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.testimonial-content h4{
+
+    font-size:18px;
+
+}
+
+.testimonial-content span{
+
+    font-size:12px;
+
+}
+
+}
+
+/*==================================================
+            FLOATING EFFECT
+==================================================*/
+
+@keyframes testimonialFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.testimonial-card:nth-child(1){
+
+    animation:testimonialFloat 6s ease-in-out infinite;
+
+}
+
+.testimonial-card:nth-child(2){
+
+    animation:testimonialFloat 6s ease-in-out infinite .6s;
+
+}
+
+.testimonial-card:nth-child(3){
+
+    animation:testimonialFloat 6s ease-in-out infinite 1.2s;
+
+}

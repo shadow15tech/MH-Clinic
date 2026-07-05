@@ -1,0 +1,710 @@
+/*==================================================
+                FOUNDER SECTION
+==================================================*/
+
+.founder-section{
+
+    position:relative;
+
+    padding:140px 0;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                BACKGROUND
+==================================================*/
+
+.founder-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:-250px;
+
+    top:100px;
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+.founder-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    right:-220px;
+
+    bottom:-220px;
+
+    border-radius:50%;
+
+    background:#00E6A8;
+
+    filter:blur(240px);
+
+    opacity:.05;
+
+}
+
+/*==================================================
+                CONTAINER
+==================================================*/
+
+.founder-container{
+
+    width:min(92%,1320px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:520px 1fr;
+
+    align-items:center;
+
+    gap:90px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.founder-image{
+
+    position:relative;
+
+}
+
+.image-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.image-wrapper img{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:.8s;
+
+}
+
+.image-wrapper:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/*==================================================
+            IMAGE BORDER
+==================================================*/
+
+.image-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:40px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(50,212,255,.35),
+
+        rgba(0,230,168,.18),
+
+        rgba(255,255,255,.08)
+
+    );
+
+    -webkit-mask:
+
+        linear-gradient(#fff 0 0) content-box,
+
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    z-index:2;
+
+}
+
+/*==================================================
+            IMAGE GLOW
+==================================================*/
+
+.founder-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    filter:blur(180px);
+
+    opacity:.08;
+
+    z-index:-1;
+
+}
+
+
+/*==================================================
+                EXPERIENCE CARD
+==================================================*/
+
+.experience-card{
+
+    position:absolute;
+
+    right:-30px;
+
+    bottom:50px;
+
+    width:230px;
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,.35);
+
+    text-align:center;
+
+    transition:.45s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.experience-card h2{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:62px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    margin-bottom:12px;
+
+    background:linear-gradient(
+        135deg,
+        #32D4FF,
+        #00E6A8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.experience-card p{
+
+    color:#dbe6f4;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.founder-content{
+
+    max-width:620px;
+
+}
+
+.founder-content h2{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:60px;
+
+    line-height:1.1;
+
+    color:#ffffff;
+
+    margin:25px 0;
+
+}
+
+.founder-content h2 span{
+
+    background:linear-gradient(
+        135deg,
+        #32D4FF,
+        #00E6A8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+/*==================================================
+                QUOTE
+==================================================*/
+
+blockquote{
+
+    position:relative;
+
+    margin:35px 0;
+
+    padding-left:35px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+    color:#ffffff;
+
+    border-left:4px solid #32D4FF;
+
+}
+
+blockquote::before{
+
+    content:"“";
+
+    position:absolute;
+
+    left:-8px;
+
+    top:-28px;
+
+    font-size:90px;
+
+    color:rgba(50,212,255,.20);
+
+    font-family:Georgia,serif;
+
+}
+
+/*==================================================
+                BIO
+==================================================*/
+
+.founder-content>p{
+
+    color:#b9c7d8;
+
+    line-height:2;
+
+    font-size:16px;
+
+    margin-bottom:45px;
+
+}
+
+/*==================================================
+                HIGHLIGHTS
+==================================================*/
+
+.founder-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-bottom:45px;
+
+}
+
+.highlight{
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+.highlight:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(50,212,255,.25);
+
+}
+
+.highlight h3{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+    background:linear-gradient(
+        135deg,
+        #32D4FF,
+        #00E6A8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.highlight span{
+
+    color:#dbe6f4;
+
+    font-size:15px;
+
+}
+
+
+
+/*==================================================
+                IMAGE HOVER
+==================================================*/
+
+.founder-image:hover .experience-card{
+
+    transform:translateY(-10px);
+
+}
+
+.image-wrapper:hover{
+
+    box-shadow:
+
+        0 40px 100px rgba(0,0,0,.35),
+
+        0 0 60px rgba(50,212,255,.08);
+
+}
+
+/*==================================================
+                BUTTON
+==================================================*/
+
+.founder-content .about-btn{
+
+    margin-top:10px;
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:1200px){
+
+.founder-container{
+
+    grid-template-columns:450px 1fr;
+
+    gap:60px;
+
+}
+
+.founder-content h2{
+
+    font-size:50px;
+
+}
+
+blockquote{
+
+    font-size:20px;
+
+}
+
+.highlight h3{
+
+    font-size:32px;
+
+}
+
+}
+
+/*==================================================
+                MOBILE TABLET
+==================================================*/
+
+@media (max-width:991px){
+
+.founder-section{
+
+    padding:100px 0;
+
+}
+
+.founder-container{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+}
+
+.founder-image{
+
+    order:1;
+
+}
+
+.founder-content{
+
+    order:2;
+
+    max-width:100%;
+
+}
+
+.image-wrapper{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+.experience-card{
+
+    right:20px;
+
+    bottom:20px;
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.founder-section{
+
+    padding:80px 0;
+
+}
+
+.founder-container{
+
+    width:92%;
+
+}
+
+.founder-content h2{
+
+    font-size:38px;
+
+    line-height:1.2;
+
+}
+
+blockquote{
+
+    padding-left:22px;
+
+    font-size:18px;
+
+    margin:25px 0;
+
+}
+
+blockquote::before{
+
+    font-size:60px;
+
+    top:-18px;
+
+}
+
+.founder-content>p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.founder-highlights{
+
+    grid-template-columns:1fr;
+
+}
+
+.highlight{
+
+    padding:22px;
+
+}
+
+.highlight h3{
+
+    font-size:30px;
+
+}
+
+.experience-card{
+
+    position:relative;
+
+    right:auto;
+
+    bottom:auto;
+
+    margin:20px auto 0;
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+.founder-content .about-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
+
+/*==================================================
+                EXTRA SMALL
+==================================================*/
+
+@media (max-width:480px){
+
+.founder-content h2{
+
+    font-size:30px;
+
+}
+
+blockquote{
+
+    font-size:16px;
+
+}
+
+.highlight{
+
+    padding:18px;
+
+}
+
+.highlight h3{
+
+    font-size:26px;
+
+}
+
+.experience-card{
+
+    padding:22px;
+
+}
+
+.experience-card h2{
+
+    font-size:48px;
+
+}
+
+.experience-card p{
+
+    font-size:14px;
+
+}
+
+}
