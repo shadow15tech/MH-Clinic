@@ -13,7 +13,7 @@ const progress = document.querySelector(".scroll-progress");
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 
-const appointmentBtn = document.querySelector(".appointment-btn");
+// const appointmentBtn = document.querySelector(".appointment-btn");
 
 /*==========================================
 BACKDROP
@@ -145,53 +145,53 @@ window.addEventListener("scroll",()=>{
 CUSTOM CURSOR
 ==========================================*/
 
-if(cursorDot && cursorOutline){
+// if(cursorDot && cursorOutline){
 
-document.addEventListener("mousemove",(e)=>{
+// document.addEventListener("mousemove",(e)=>{
 
-    cursorDot.style.left=e.clientX+"px";
+//     cursorDot.style.left=e.clientX+"px";
 
-    cursorDot.style.top=e.clientY+"px";
+//     cursorDot.style.top=e.clientY+"px";
 
-    cursorOutline.style.left=e.clientX+"px";
+//     cursorOutline.style.left=e.clientX+"px";
 
-    cursorOutline.style.top=e.clientY+"px";
+//     cursorOutline.style.top=e.clientY+"px";
 
-});
+// });
 
-}
+// }
 
 /*==========================================
 CURSOR HOVER
 ==========================================*/
 
-if(cursorOutline){
+// if(cursorOutline){
 
-document.querySelectorAll("a,button,.menu-toggle").forEach(item=>{
+// document.querySelectorAll("a,button,.menu-toggle").forEach(item=>{
 
-item.addEventListener("mouseenter",()=>{
+// item.addEventListener("mouseenter",()=>{
 
-cursorOutline.style.width="70px";
+// cursorOutline.style.width="70px";
 
-cursorOutline.style.height="70px";
+// cursorOutline.style.height="70px";
 
-cursorOutline.style.borderColor="#32D4FF";
+// cursorOutline.style.borderColor="#32D4FF";
 
-});
+// });
 
-item.addEventListener("mouseleave",()=>{
+// item.addEventListener("mouseleave",()=>{
 
-cursorOutline.style.width="42px";
+// cursorOutline.style.width="42px";
 
-cursorOutline.style.height="42px";
+// cursorOutline.style.height="42px";
 
-cursorOutline.style.borderColor="rgba(255,255,255,.35)";
+// cursorOutline.style.borderColor="rgba(255,255,255,.35)";
 
-});
+// });
 
-});
+// });
 
-}
+// }
 
 /*==========================================
 MAGNETIC BUTTON
