@@ -1,0 +1,33 @@
+/*=========================================
+        SCROLL PROGRESS
+=========================================*/
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    z-index:99999;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    box-shadow:
+
+        0 0 18px rgba(50,212,255,.6);
+
+}   

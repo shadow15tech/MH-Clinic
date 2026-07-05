@@ -1,0 +1,219 @@
+/*==================================================
+                FLOATING CALL
+==================================================*/
+
+.call-float{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:120px;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px;
+
+    border-radius:70px;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    overflow:hidden;
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+                ICON
+==================================================*/
+
+.call-icon{
+
+    position:relative;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #3B82F6,
+        #06B6D4
+    );
+
+    color:#ffffff;
+
+    font-size:26px;
+
+    flex-shrink:0;
+
+    transition:.35s;
+
+}
+
+.call-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(59,130,246,.45);
+
+    animation:callPulse 2s infinite;
+
+}
+
+@keyframes callPulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================================
+                TEXT
+==================================================*/
+
+.call-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    white-space:nowrap;
+
+    padding-right:10px;
+
+}
+
+.call-text span{
+
+    color:#9fb2c6;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+.call-text strong{
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-family:"Sora",sans-serif;
+
+    margin-top:2px;
+
+}
+
+/*==================================================
+                HOVER
+==================================================*/
+
+.call-float:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(59,130,246,.25);
+
+    box-shadow:
+
+        0 25px 70px rgba(59,130,246,.30);
+
+}
+
+.call-float:hover .call-icon{
+
+    transform:scale(1.08);
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.call-float{
+
+    right:16px;
+
+    bottom:88px;
+
+    padding:10px;
+
+}
+
+.call-text{
+
+    display:none;
+
+}
+
+.call-icon{
+
+    width:56px;
+
+    height:56px;
+
+    font-size:24px;
+
+}
+
+.call-icon::before{
+
+    width:56px;
+
+    height:56px;
+
+}
+
+}

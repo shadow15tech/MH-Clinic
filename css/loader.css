@@ -1,0 +1,190 @@
+/*==================================================
+                PAGE LOADER
+==================================================*/
+
+.page-loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#07121d;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+
+    transition:1s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:95px;
+
+    margin-bottom:28px;
+
+    animation:logoFloat 2.5s ease-in-out infinite;
+
+}
+
+.loader-content h2{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:58px;
+
+    margin-bottom:14px;
+
+    letter-spacing:4px;
+
+    color:#ffffff;
+
+}
+
+.loader-content h2 span{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.loader-content p{
+
+    color:#9db0c3;
+
+    letter-spacing:2px;
+
+    margin-bottom:35px;
+
+    font-size:14px;
+
+}
+
+.loader-bar{
+
+    width:280px;
+
+    height:5px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+.loader-bar span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #32D4FF,
+
+        #00E6A8
+
+    );
+
+    animation:loadingBar 2s ease forwards;
+
+}
+
+.page-loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+@keyframes loadingBar{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.loader-content h2{
+
+    font-size:42px;
+
+}
+
+.loader-logo{
+
+    width:75px;
+
+}
+
+.loader-bar{
+
+    width:220px;
+
+}
+
+}
+

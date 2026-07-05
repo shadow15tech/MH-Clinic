@@ -1,0 +1,147 @@
+/*==================================================
+                BACK TO TOP
+==================================================*/
+
+.back-top{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:210px;
+
+    width:64px;
+
+    height:64px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.45s cubic-bezier(.23,1,.32,1);
+
+}
+
+.back-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.back-top i{
+
+    position:absolute;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 20px 60px rgba(50,212,255,.25);
+
+}
+
+.back-top:hover i{
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+            SVG RING
+==================================================*/
+
+.progress-ring{
+
+    position:absolute;
+
+    inset:0;
+
+    transform:rotate(-90deg);
+
+}
+
+.progress-ring-bg{
+
+    fill:none;
+
+    stroke:rgba(255,255,255,.10);
+
+    stroke-width:3;
+
+}
+
+.progress-ring-circle{
+
+    fill:none;
+
+    stroke:url(#gradient);
+
+    stroke:#32D4FF;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:176;
+
+    stroke-dashoffset:176;
+
+    transition:.2s linear;
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.back-top{
+
+    width:58px;
+
+    height:58px;
+
+    right:16px;
+
+    bottom:160px;
+
+}
+
+}
