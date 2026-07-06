@@ -86,20 +86,26 @@ navLinks.forEach(link => {
 });
 
 /*==========================================
-ACTIVE MENU
+ACTIVE MENU (CLICK + SCROLL READY)
 ==========================================*/
 
-navLinks.forEach(link => {
+// navLinks.forEach(link => {
 
-    link.addEventListener("click", function(){
+//     link.addEventListener("click", () => {
 
-        navLinks.forEach(item=>item.classList.remove("active"));
+//         // Remove active from all links
+//         navLinks.forEach(item => {
 
-        this.classList.add("active");
+//             item.classList.remove("active");
 
-    });
+//         });
 
-});
+//         // Add active to clicked link
+//         link.classList.add("active");
+
+//     });
+
+// });
 
 /*==========================================
 SCROLL NAVBAR

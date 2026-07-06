@@ -1190,13 +1190,127 @@ SCROLL EFFECT
 
 
 
-/*=========================================
-        ACTIVE MENU
-=========================================*/
+/*==================================================
+                ACTIVE NAVIGATION
+==================================================*/
+
+.navbar-nav a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 0;
+
+    color:#d7e3ee;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.35s cubic-bezier(.23,1,.32,1);
+
+}
+
+/* Hover */
+
+.navbar-nav a:hover{
+
+    color:#32D4FF;
+
+}
+
+/* Animated Underline */
+
+.navbar-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #32D4FF,
+        #00E6A8
+    );
+
+    transform:translateX(-50%);
+
+    transition:.4s cubic-bezier(.23,1,.32,1);
+
+}
+
+/* Small Glow Dot */
+
+.navbar-nav a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:-8px;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#32D4FF;
+
+    transform:translateX(-50%) scale(0);
+
+    opacity:0;
+
+    box-shadow:
+        0 0 10px rgba(50,212,255,.8),
+        0 0 20px rgba(50,212,255,.5);
+
+    transition:.35s;
+
+}
+
+/* Hover Effect */
+
+.navbar-nav a:hover::after{
+
+    width:100%;
+
+}
+
+.navbar-nav a:hover::before{
+
+    transform:translateX(-50%) scale(1);
+
+    opacity:1;
+
+}
+
+/*==================================================
+            ACTIVE LINK
+==================================================*/
 
 .navbar-nav a.active{
 
     color:#32D4FF;
+
+    font-weight:600;
 
 }
 
@@ -1208,8 +1322,20 @@ SCROLL EFFECT
 
 .navbar-nav a.active::before{
 
-    opacity:1;
-
     transform:translateX(-50%) scale(1);
 
+    opacity:1;
+
 }
+
+/*==================================================
+        CLICK ANIMATION
+==================================================*/
+
+.navbar-nav a:active{
+
+    transform:scale(.96);
+
+}
+
+
